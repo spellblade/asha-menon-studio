@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+.node_modules.lock
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Build / framework output
+dist/
+.output/
+.nitro/
+.vercel/
+.tanstack/
+.vite/
+
+# Logs and OS
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# Local databases and caches
+*.sqlite
+pglite-debug.log
+
+# Sandbox / agent-only (not part of the published repo)
+AGENTS.md
+AGENTS.project.md
+.grok/
+artifacts/
+attachments/
+screenshots/
+startup.sh
+
+# Editor
+.idea/
+.vscode/
+*.swp

@@ -1,0 +1,46 @@
+name: Bug Report
+description: Report something that is broken or behaving unexpectedly
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Bug Report
+        Thank you for reporting. Please fill out the fields below.
+        Security issues: use a private advisory, not this form.
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened vs what you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      placeholder: |
+        1. Run `npm run dev`
+        2. Open /studio
+        3. …
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Project Version
+      placeholder: "e.g., 0.1.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - Other
+    validations:
+      required: true

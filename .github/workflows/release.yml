@@ -1,0 +1,22 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION=$(tr -d '[:space:]' < VERSION)
+          gh release create "${GITHUB_REF_NAME}" \
+            --title "${VERSION}" \
+            --notes "See CHANGELOG.md for ${VERSION}."
